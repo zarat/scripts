@@ -131,7 +131,7 @@ def main(args):
         print '[info] restoring iptables'
         os.system("iptables-restore < dnspion_iptables.backup")
         os.system("rm dnspion_iptables.backup")
-    time.sleep(2)  
+        time.sleep(2)  
         sys.exit("[info] shutting down now")
         
     signal.signal(signal.SIGINT, signal_handler)
