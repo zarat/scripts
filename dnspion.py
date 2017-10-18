@@ -24,7 +24,7 @@ def arg_parser():
     
 print "**********************************"
 print "*** DNSpion v0.1"    
-print "*** Support: dnspion@zarat.ml"    
+print "*** Support: manuel.zarat@gmail.com"    
 print "*** powered by Python und Scapy" 
 print "*** this software is for educational purposes only."
 print "*** just penetrate networks that you own or have permission to."
