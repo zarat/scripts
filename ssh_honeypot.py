@@ -1,8 +1,9 @@
 #!/usr/bin/env python2.7
-import socket, sys, threading, thread
+import os, socket, sys, threading, thread
 import paramiko
 
 #generate keys with 'ssh-keygen -t rsa -f server.key'
+os.system("ssh-keygen -t rsa -f server.key")
 HOST_KEY = paramiko.RSAKey(filename='server.key')
 SSH_PORT = 2222
 LOGFILE = 'logins.txt' #File to log the user:password combinations to
