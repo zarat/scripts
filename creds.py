@@ -21,7 +21,7 @@ from urllib import unquote
 import binascii
 from time import gmtime, strftime
 
-logging.basicConfig(filename='credentials.txt',level=logging.INFO)
+logging.basicConfig(filename='creds.log',level=logging.INFO)
 DN = open(devnull, 'w')
 pkt_frag_loads = OrderedDict()
 challenge_acks = OrderedDict()
