@@ -6,7 +6,7 @@ import paramiko
 os.system("ssh-keygen -t rsa -f server.key")
 HOST_KEY = paramiko.RSAKey(filename='server.key')
 SSH_PORT = 2222
-LOGFILE = 'logins.txt' #File to log the user:password combinations to
+LOGFILE = 'ssh_honeypot.log' #File to log the user:password combinations to
 LOGFILE_LOCK = threading.Lock()
 
 class SSHServerHandler (paramiko.ServerInterface):
