@@ -2,7 +2,7 @@
 # Description: gives you a shell depending on given shellcode
 # Author: Manuel Zarat
 # Date: 27.8.2018
-# Compiling: gcc -fo-stack-protector -z eecstack ile.c -o file -m32 
+# Compiling: gcc -fo-stack-protector -z execstack file.c -o file -m32 
 */
 #include <stdio.h>
 #include <string.h>
