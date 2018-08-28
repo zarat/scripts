@@ -20,9 +20,9 @@ sub credits(){
 sub usage(){
     credits();
     print " Usage:\n\n";
-    print " gspattern.pl <LENGTH> // Will generate a string of given length. \n";
+    print " pattern.pl <LENGTH> // Will generate a string of given length. \n";
     print "\n";
-    print " gspattern.pl <LENGTH> <SEARCHSTR> // Will generate a string of given length and display the offsets of the pattern.\n\n";
+    print " pattern.pl <LENGTH> <SEARCHSTR> // Will generate a string of given length and display the offsets of the pattern.\n\n";
 }
  
 sub generate(){
