@@ -65,4 +65,4 @@ paramsMultipart = [(variable, (upload_file, upload_content, content_type))]
 headers = {"Origin":origin,"Cache-Control":"max-age=0","Accept":"text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8","User-Agent":"Mozilla/5.0 (X11; Linux x86) AppleWebKit/524.12 (KHTML, like Gecko) Chrome/52.0.2963.251 Safari/524.12","Connection":"close","Accept-Encoding":"gzip, deflate","Accept-Language":"en-US,en;q=0.8"}
 response = session.post(url, data=paramsPost, files=paramsMultipart, headers=headers)
 
-print "Status code:", response.status_code
+print "Status code:", response.status_code 
