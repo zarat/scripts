@@ -34,7 +34,7 @@ def pecavefinder(file_name, cave_size, base):
 
     print("\n[+] Looking for code caves...")
     for section in pe.sections:
-        if section.SizeOfRawData != 0:
+        if section.SizeOfRawData != 0: 
             pos = 0
             count = 0
             fd.seek(section.PointerToRawData, 0)
