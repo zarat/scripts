@@ -82,19 +82,24 @@ int main( int argc, char *argv[] ) {
     file = argv[1];
     section = argv[2];    
     int size;
-    size = atoi(argv[3]);       
-    // get the payload     
-    char *szStr;
-    szStr = argv[4];
-    unsigned char *lpData;
-    long nbytes;
-    char *lpszCopy;
-    /* Convert string to bytes (a) simply re-cast */
-    lpData = (unsigned char*)szStr;
-    nbytes = strlen(szStr);     
-    printf("[info] PEPatchER v 1.0 by Manuel Zarat (manuel.zarat@gmail.com)\n");     
+    size = atoi(argv[3]);
+
+    /* get the payload */
+    char *hexstring;
+    hexstring = argv[4];
+    char *pos = hexstring;
+    int pl = strlen(hexstring);
+    unsigned char val[pl/2];
+    size_t count = 0;
+    for(count = 0; count < sizeof(val)/sizeof(val[0]); count++) {
+        sscanf(pos, "%2hhx", &val[count]);
+        pos += 2 * sizeof(char);
+    }    
+    for(count = 0; count < sizeof(val)/sizeof(val[0]); count++) printf("\\x%02x", val[count]);            
+    int pl3 = pl/2;
+    
     if (AddSection(file, section, size)){
-        if (AddCode(file, lpData, nbytes)) {
+        if (AddCode(file, val, pl3)) {
             printf("[info] %s Successfuly patched!\n", file);
         } else {
             printf("[erro] Error adding shellcode\n");
@@ -102,4 +107,5 @@ int main( int argc, char *argv[] ) {
     } else {
         printf("[erro] Error adding Section\n");
     }
+
 }
