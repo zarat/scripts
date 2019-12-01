@@ -330,7 +330,8 @@ void PrintTcpPacket(char* Buffer, int Size)
 	PrintData(Buffer+iphdrlen,tcpheader->data_offset*4);
 
 	fprintf(logfile,"Data Payload\n");
-	PrintData(Buffer+iphdrlen+tcpheader->data_offset*16,(Size-tcpheader->data_offset*16-iphdr->ip_header_len*16));
+	//PrintData(Buffer+iphdrlen+tcpheader->data_offset*16,(Size-tcpheader->data_offset*16-iphdr->ip_header_len*16));
+	PrintData( Buffer + iphdrlen + tcpheader->data_offset, (Size - tcpheader->data_offset - iphdrlen) );
 
 	fprintf(logfile,"\n###########################################################");
 }
